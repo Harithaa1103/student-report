@@ -3,23 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Application</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>student reports</title>
 </head>
+<style>
+    .cointainer{
+        text-align: center;
+    }
+</style>
 <body>
-    <div class="app">
-        <h1>Level-1 GK Questions</h1>
-        <div class="quiz">
-            <h2 id="Question">Question goes here</h2>
-            <div id="answer-buttons">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
-            </div>
-            <button id="next-btn">Next</button>
-        </div>
-    </div>
-    <script src="./script.js"></script>
+    <div class="cointainer">
+    <h1>STUDENT REPORTS</h1>
+    <label for="Tam">Tamil : </label>
+    <input type="number"id="sub1"></input><br><br>
+    <label for="Eng">English : </label>
+    <input type="number"id="sub2"></input><br><br>
+    <label for="Mat">Maths : </label>
+    <input type="number"id="sub3"></input><br><br>
+    <label for="Sci">Science : </label>
+    <input type="number"id="sub4"></input><br><br>
+    <label for="Soc">Social :</label>
+    <input type="number"id="sub5"></input><br><br>
+    <button onclick="marks()">sumbit</button>
+    <h1 id="result"></h1></div>
+    <script>
+        const marks=()=>{
+            let Mark1=Number(document.getElementById("sub1").value)
+            let Mark2=Number(document.getElementById("sub2").value)
+            let Mark3=Number(document.getElementById("sub3").value)
+            let Mark4=Number(document.getElementById("sub4").value)
+            let Mark5=Number(document.getElementById("sub5").value)
+            let total=Mark1+Mark2+Mark3+Mark4+Mark5
+            let average=total/5
+            if(total<175){
+                document.getElementById("result").innerHTML=("Fail"+"you're fail" +" /" +total + " /" + average)
+            }
+            else if(total>=175){
+                document.getElementById("result").innerHTML=("Pass"+"Try to get above 50" +" /"+total + " /" + average)
+            }
+            else{
+                document.getElementById("result").innerHTML=("Try to get centum" +" /"+total + " /" + average)
+            }
+        }
+    </script>
 </body>
 </html>
